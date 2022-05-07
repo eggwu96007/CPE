@@ -1,0 +1,36 @@
+#include<stdio.h>
+//換完喝完之後要先還
+int main(){
+int buy;
+while(scanf("%d",&buy)!=EOF)
+{
+int total=0;
+int ori=0;
+ ori= buy;
+  while(buy/3!=0||buy==2)
+  {
+  	if(buy%3==0)
+	{
+	total=total+(buy/3);
+	buy=buy/3;
+	}
+  	
+	else if(buy%3==1)
+	{
+	buy=buy+2;
+	total=total+(buy/3);
+	buy=(buy/3)-2;
+	}
+	
+	else if(buy%3==2)
+	{
+	buy=buy+1;
+	total=total+(buy/3);
+	buy=(buy/3)-1;
+	}
+  }
+	
+printf("%d\n",total+ori);
+}
+	
+}
