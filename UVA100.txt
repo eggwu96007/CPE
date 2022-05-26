@@ -1,0 +1,49 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+	int min;
+	int max;
+	int input1;
+	int input2;
+	int count=0;
+	int num;
+	int large=0;
+
+while(scanf("%d%d",&input1,&input2)!=EOF)
+{
+	if(input1>input2)
+	{
+	max=input1;
+	min=input2;
+	}
+	else
+	{
+	max=input2;
+	min=input1;
+	}
+	//printf("%d %d\n",min,max);
+	for(int i=min;i<=max;i++)
+	{
+		num=i;
+		while(num!=1)
+		{
+			if(num%2!=0)
+			num=num*3+1;
+			else
+			num=num/2;
+				
+		count++;
+		}
+			if(count>large)
+			large=count;
+	count=0;
+	}
+	printf("%d %d %d\n",input1,input2,large+1);
+	large=0;
+	
+
+
+}
+
+}

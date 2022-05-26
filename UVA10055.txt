@@ -1,0 +1,23 @@
+//考宣告
+#include<stdio.h>
+#include<math.h>
+#include<stdlib.h>
+int main()
+{
+long long int input;
+ long long int input1;
+ long long int output;
+ 
+while(scanf("%lld",&input)!=EOF)
+{
+scanf("%lld",&input1);
+//printf("怪怪的%lld%lld\n",input,input1);
+output=abs(input-input1);
+printf("%lld\n",output);
+input=0;
+input1=0;
+
+}
+
+
+}

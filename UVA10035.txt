@@ -1,0 +1,70 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+unsigned int input1=0;
+unsigned int input2=0;
+int array1[100];
+int array2[100];
+int carry1=0;
+int carry2=0;
+int sum;
+int compare;
+//while((scanf("%u",&input1)!=0)&&(scanf("%u",&input2)!=0))
+while(scanf("%d %d", &input1, &input2) && (input1!=0 && input2!=0))
+{
+
+	while((input1/10)!=0)
+	{
+	array1[carry1]=input1%10;
+	input1=input1/10;
+	carry1++;
+	}
+	array1[carry1]=input1;
+	
+	while((input2/10)!=0)
+	{
+	array2[carry2]=input2%10;
+	input2=input2/10;
+	carry2++;
+	}
+	array2[carry2]=input2;
+
+	if(carry2>=carry1)
+	compare=carry2;
+	if(carry2<carry1)
+	compare=carry1;
+	for(int i=0;i<=compare;i++)
+	{
+	if(array1[i]+array2[i]<20&&array1[i]+array2[i]>=10)
+	{
+	sum=sum+1;
+	array1[i+1]++;
+	}
+	if(array1[i]+array2[i]>=20)
+	{
+	sum=sum+1;
+	array1[i+1]=array1[i+1]+2;
+	}
+	array2[i]=0;
+	array1[i]=0;
+	}
+	if(sum>1)
+	printf("%d carry operations.\n",sum);
+	else if(sum==0)
+	printf("No carry operation.\n");
+	else
+	printf("%d carry operation.\n",sum);
+	
+	carry1=0;
+	carry2=0;
+	sum=0;
+	
+
+	
+	
+
+
+}
+
+}
