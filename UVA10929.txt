@@ -1,0 +1,38 @@
+#include<stdio.h>
+#include<math.h>
+#include<string.h>
+#include<stdlib.h>
+int main()
+{
+char input[1000]={0};
+char t;
+int odd=0;
+int even=0;
+	while(scanf("%s",input)!=EOF&&*input!='0')
+	{
+		int large =strlen(input);
+	//	printf("%d====\n",large);
+		for(int i=0;i<large;i++)
+		{
+		
+			if(i%2==0)
+			//printf("%d====\n",);
+			odd=odd+(input[i]- '0');
+			if(i%2==1)
+			//printf("%d====\n",input[i]- '0');
+			even=even+(input[i]- '0');
+		}
+	//	printf("even%d\n",even);
+	//	printf("odd%d\n",odd);
+	
+		 if(abs(even-odd)%11==0||(even-odd)==0)
+	 printf("%s is a multiple of 11.\n",&input);
+	 else
+		printf("%s is not a multiple of 11.\n",&input);
+		even=0;
+		odd=0;
+	}
+
+
+
+}
