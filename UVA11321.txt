@@ -1,0 +1,116 @@
+#include<stdio.h>
+#include<math.h>
+int main()
+{
+ int total;
+ int mod;
+ int str[1000]={0};
+ 
+ while(scanf("%d%d",&total,&mod))
+ {
+ 
+  if(total==0&&mod==0)
+  {
+   printf("0 0\n");
+   break;
+  }
+  
+  else
+  {
+  printf("%d %d\n",total,mod);
+   for(int i = 0;i<total;i++)
+   {
+   scanf("%d\n",&str[i]);
+   }
+ }
+  
+  
+   for(int l =0 ; l<total-1;l++)
+  {
+  for(int k =0 ; k<total-1;k++)
+  {
+   if((str[k])>(str[k+1]))
+   {
+    int tem;
+    tem=str[k+1];
+    str[k+1]=str[k];
+    str[k]=tem;
+   }
+  }
+  }
+   
+  
+ 
+ for(int l =0 ; l<total-1;l++)
+  {
+  for(int k =0 ; k<total-1;k++)
+  {
+   if((str[k]%mod)>(str[k+1]%mod))
+   {
+    int tem;
+    tem=str[k+1];
+    str[k+1]=str[k];
+    str[k]=tem;
+   }
+  }
+  }
+  
+  for(int j=0;j<total;j++)
+  {
+   //printf("%d\n",str[j]);
+  }
+  
+  
+   for(int b = 0;b<total;b++)
+   {
+   	for(int a = 0;a<total-1;a++)
+   	{
+    if(str[a]%mod==str[a+1]%mod)
+    {
+    //odd even
+     if((str[a]%2==0&&abs(str[a+1]%2)==1))
+     {
+      
+      int tem;
+      tem=str[a+1];
+      str[a+1]=str[a];
+      str[a]=tem;
+      
+
+     }
+    
+     //even even
+     else if(str[a]%2==0&&str[a+1]%2==0)
+     {
+      if(str[a]>str[a+1])
+      {
+      int tem;
+      tem=str[a];
+      str[a]=str[a+1];
+      str[a+1]=tem;
+      }
+     }
+     //odd odd
+     else if(abs(str[a]%2)==1&&abs(str[a+1]%2)==1)
+     {
+      if(str[a]<str[a+1])
+      {
+      int tem;
+      tem=str[a];
+      str[a]=str[a+1];
+      str[a+1]=tem;
+      }
+     }
+    }
+   //scanf("%d\n",&str[i]);
+   
+   	}
+   }
+   
+  for(int j=0;j<total;j++)
+  {
+   printf("%d\n",str[j]);
+  }
+ }
+ 
+}

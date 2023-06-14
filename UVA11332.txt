@@ -1,0 +1,34 @@
+#include<stdio.h>
+#include<string.h>
+#include <stdlib.h>
+int main(void)
+{
+char str[1000];
+while(gets(str))//fgets(str,100,stdin)
+	{
+//	printf("%s",str);
+//	printf("sum:%d\n",strlen(str));
+	if(str[0]==48)
+	break;
+		while(strlen(str)>1)
+		{
+			int total=0;
+			for(int i =0;i<strlen(str);i++)
+			{
+		//	printf("add:%c\n",str[i]);
+			total=total+(str[i]-48);
+		//	printf("total:%d\n",total);
+			
+			}
+			itoa(total,str,10);
+		//	printf("count:%d\n",total);
+		//	printf("string%s\n",str);
+		//	printf("str_num%d\n",strlen(str));
+		
+		}
+	printf("%s\n",str);
+	}
+	
+
+
+}

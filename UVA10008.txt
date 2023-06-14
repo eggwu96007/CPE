@@ -1,0 +1,94 @@
+#include<stdio.h>
+#include<ctype.h>
+#include<string.h>
+
+int main(void)
+{
+	int num;
+	char alp_w[26];
+	for(int j=65;j<=90;j++)
+	{
+	alp_w[j-65]=j;
+//	printf("%c",alp_w[j-65]);
+	}
+//	printf("%s",alp_w);
+	
+	
+	
+	int alp[26]={0};
+	scanf("%d\n",&num);
+	
+	for(int i=0;i<num;i++)
+	{
+//	printf("%d====",i);
+		char str[10000];
+		//fgets(str,100,stdin);
+		gets(str);
+	//	printf("====%s\n",str);
+		for(int k =0;k<strlen(str);k++)
+		{
+		//	printf("%c\n",str[k]);
+			if(islower(str[k]))
+				alp[str[k]-'a']++;
+			
+			else if(isupper(str[k]))
+				alp[str[k]-'A']++;
+
+		}
+		
+	
+	}
+
+	
+	
+	for(int n =0;n<26;n++)
+	{
+		for(int m =0;m<26;m++)
+		{
+				if(alp_w[n]<alp_w[m])
+			{
+				int tmp=alp[n];
+				char tmp_w=alp_w[n];
+				
+				alp[n]=alp[m];
+				alp_w[n]=alp_w[m];
+				
+				alp[m]=tmp;
+				alp_w[m]=tmp_w;
+				
+			}
+			
+			if(alp[n]>alp[m])
+			{
+				int tmp=alp[n];
+				char tmp_w=alp_w[n];
+				
+				alp[n]=alp[m];
+				alp_w[n]=alp_w[m];
+				
+				alp[m]=tmp;
+				alp_w[m]=tmp_w;
+				
+			}
+			
+		
+	
+	
+		}
+	
+	}
+	
+	for(int o=0;o<=25;o++)
+	{	if(alp[o]==0)
+			break;
+		printf("%c %d\n",alp_w[o],alp[o]);
+		
+	
+	}
+
+
+	
+	
+	
+
+}

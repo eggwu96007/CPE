@@ -1,0 +1,51 @@
+#include<stdio.h>
+#include<string.h>
+
+int main(void)
+{
+	char str[1000];
+//	gets(str);
+	
+	while(	fgets(str,100,stdin))
+	{
+	char table_s[]="`1234567890-=qwertyuiop[]asdfghjkl;'zxcvbnm,./";
+	char table_l[]="`1234567890-=QWERTYUIOP[]ASDFGHJKL;'ZXCVBNM,./";
+//	printf("%c======",str[4]);
+	for(int i=0;i<strlen(str);i++)
+	{
+		//printf("====%c======\n",table_s[25]);
+	
+		for(int j=0;j<strlen(table_s);j++)
+		{
+			if(str[i]==32)
+			{
+			printf(" ");
+		//	printf("1");
+			break;
+		
+			}
+	//	printf("2");
+			if((str[i]==table_s[j])||(str[i]==table_l[j]))
+			{
+				
+				printf("%c",table_s[j-2]);
+				break;
+			
+			}
+				
+			
+	
+		}
+	//	printf("3");
+	
+	
+	}
+	printf("\n");
+
+	
+	}
+
+
+
+
+}
